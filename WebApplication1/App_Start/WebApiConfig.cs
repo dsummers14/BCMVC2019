@@ -29,6 +29,11 @@ namespace WebApplication1
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Microsoft.NAV.customer>("Customers");
+            builder.EntitySet<Microsoft.NAV.salesOrder>("SalesOrders");
+            builder.EntitySet<Microsoft.NAV.salesOrderLine>("SalesOrderLines");
+            //builder.EntityType<Microsoft.NAV.salesInvoice>().Property(c => c.invoiceDate).AsDate();
+            builder.EntitySet<Microsoft.NAV.salesInvoice>("SalesInvoices");
+            builder.EntitySet<Microsoft.NAV.salesInvoiceLine>("SalesInvoiceLines");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: "oData",
